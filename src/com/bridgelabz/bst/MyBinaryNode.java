@@ -10,4 +10,5 @@ public class MyBinaryNode<K extends Comparable>{
 		this.left = null;
 		this.right = null;	
 	}
+	
 }

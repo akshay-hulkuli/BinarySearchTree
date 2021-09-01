@@ -26,10 +26,18 @@ public class MyBinaryTree<K extends Comparable> {
 		return current;
 	}
 	
-	public void inorder(MyBinaryNode<K> current) {
+	private void inorder(MyBinaryNode<K> current) {
 		if(current == null) return;
 		inorder(current.right);
 		System.out.print(current.key+" ");
 		inorder(current.left);
+	}
+	
+	public int getSize() {
+		return this.getSizeRecursive(root);
+	}
+	
+	private int getSizeRecursive(MyBinaryNode<K> current) {
+		return current == null ? 0 :1 + this.getSizeRecursive(current.left)+this.getSizeRecursive(current.right);
 	}
 }
